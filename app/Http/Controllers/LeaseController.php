@@ -29,6 +29,7 @@ class LeaseController extends Controller
     public function __construct(Lease $lease)
     {
         $this->middleware('lang'); // Language middleware.
+        $this->middleware();
 
         $this->lease = $lease;
     }
@@ -75,7 +76,7 @@ class LeaseController extends Controller
 
     public function calendar()
     {
-
+        return view();
     }
 
     /**
