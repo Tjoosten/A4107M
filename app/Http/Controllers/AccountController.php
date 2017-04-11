@@ -30,8 +30,8 @@ class AccountController extends Controller
      */
     public function __construct(User $users)
     {
-        $this->middleware('auth');
-        $this->middleware('lang');
+        $this->middleware('auth'); // Authencation middleware
+        $this->middleware('lang'); // Translation  middleware
 
         $this->users = $users;
     }
@@ -43,6 +43,8 @@ class AccountController extends Controller
      */
     public function index()
     {
+        // TODO: Register route. 
+
         $data['title'] = trans('account.title-settings', ['name' => auth()->user()->name]);
         return view('account.settings', $data);
     }
@@ -56,6 +58,8 @@ class AccountController extends Controller
      */
     public function updatePassword(PasswordValidator $input, $userId)
     {
+        // TODO: Register route. 
+
         if ((int) $userId === auth()->user()->id) { // The user is the same then the given user.
             if ($this->users->find($userId)->update($input->all(['_token']))) { // The user has been updated.
                 $this->flashMessage(trans('account.password-update'), 'success');
@@ -74,8 +78,12 @@ class AccountController extends Controller
      */
     public function updateSettings(SettingsValidator $input, $userId)
     {
-        if () { // The user is the same then the given user. 
+        // TODO: Register route.
 
+        if ((int) $userId === auth()->user()->id) { // The user is the same then the given user. 
+            if ($this->users->find($userId)->update($input->all(['_token']))) { // The user has been updated.
+                $this->flashMessage(trans('account.settings-update'), 'success');
+            }
         }
 
         return back();

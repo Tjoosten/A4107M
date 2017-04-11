@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Cog\Ban\Providers\BanServiceProvider::class,
 
         /*
          * Application Service Providers...
