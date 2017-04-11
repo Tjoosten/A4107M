@@ -15,7 +15,8 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Home routes.
+Route::get('/home', 'HomeController@backend');
 
 // Lease routes
 Route::get('/lease', 'LeaseController@index')->name('lease.index');
