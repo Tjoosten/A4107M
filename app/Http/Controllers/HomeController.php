@@ -38,4 +38,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * Get the backend page for the application.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function backend()
+    {
+        return view();
+    }
 }

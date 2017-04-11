@@ -15,6 +15,12 @@ class CreateLeasesTable extends Migration
     {
         Schema::create('leases', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('status_id');
+            $table->string('end_date');
+            $table->string('start_date');
+            $table->string('email_address');
+            $table->string('group_name');
+            $table->string('phone_number');
             $table->timestamps();
         });
     }

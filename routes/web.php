@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index');
 Route::get('/lease', 'LeaseController@index')->name('lease.index');
 Route::get('/lease/request', 'LeaseController@leaseRequest')->name('lease.request');
 Route::get('/lease/access', 'LeaseController@domainAccess')->name('lease.access');
+Route::get('/lease/calendar', 'LeaseController@Calendar')->name('lease.calendar');

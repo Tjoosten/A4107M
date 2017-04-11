@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Class GroupTableSeeder
+ */
 class GroupTableSeeder extends Seeder
 {
     /**

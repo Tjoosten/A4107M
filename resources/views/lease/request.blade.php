@@ -38,7 +38,7 @@
                                     </label>
 
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" placeholder="Start datum verhuring">
+                                        <input type="text" class="form-control" name="start_date" placeholder="Start datum verhuring">
                                     </div>
                                 </div>
 
@@ -48,7 +48,7 @@
                                     </label>
 
                                     <div class="col-md-5">
-                                        <input type="text" class="form-control" placeholder="Eind datum verhuring">
+                                        <input type="text" class="form-control" name="end_date" placeholder="Eind datum verhuring">
                                     </div>
                                 </div>
 
@@ -58,7 +58,7 @@
                                     </label>
 
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" placeholder="groep">
+                                        <input type="text" class="form-control" name="group_name" placeholder="groep">
                                     </div>
                                 </div>
 
@@ -68,7 +68,7 @@
                                     </label>
 
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" placeholder="E-amil adres v/d contactpersoon">
+                                        <input type="text" class="form-control" name="email_address" placeholder="E-amil adres v/d contactpersoon">
                                     </div>
                                 </div>
 
@@ -78,7 +78,7 @@
                                     </label>
 
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" placeholder="GSM-nummer v/d contact persoon">
+                                        <input type="text" class="form-control" name="phone_number" placeholder="GSM-nummer v/d contact persoon">
                                     </div>
                                 </div>
 

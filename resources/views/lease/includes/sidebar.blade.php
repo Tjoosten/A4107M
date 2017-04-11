@@ -8,7 +8,7 @@
             <span class="fa fa-btn fa-map-signs" aria-hidden="true"></span> Bereikbaarheid
         </a>
 
-        <a href="" class="list-group-item">
+        <a href="{{ route('lease.calendar') }}" class="list-group-item">
             <span class="fa fa-btn fa-calendar" aria-hidden="true"></span> Verhuur kalender
         </a>
 
@@ -16,7 +16,7 @@
             <span class="fa fa-btn fa-plus" aria-hidden="true"></span> Verhuur aanvragen
         </a>
 
-        <a href="" class="list-group-item">
+        <a href="mailtoverhuur@st-joris-turnhout.be" class="list-group-item">
             <span class="fa fa-btn fa-envelope" aria-hidden="true"></span>Contacteer verantwoordelijke
         </a>
     </div>
