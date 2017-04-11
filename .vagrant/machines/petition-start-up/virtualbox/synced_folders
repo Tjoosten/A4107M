@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/Code/petition-start-up":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/Code/petition-start-up","hostpath":"R:/petition-start-up","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"R:/petition-start-up","disabled":false,"__vagrantfile":true}}}
