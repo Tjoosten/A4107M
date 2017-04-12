@@ -41,7 +41,8 @@ class LeaseController extends Controller
      */
     public function index()
     {
-        return view('lease.index');
+        $data['title'] = trans('lease.title-index');
+        return view('lease.index', $data);
     }
 
     /**
@@ -51,7 +52,8 @@ class LeaseController extends Controller
      */
     public function leaseRequest()
     {
-        return view('lease.request');
+        $data['title'] = trans('lease.title-request');
+        return view('lease.request', $data);
     }
 
     /**
@@ -67,16 +69,39 @@ class LeaseController extends Controller
         if (! auth()->check() && $create) { // There is no user authencated.
             Mail::to()->queue();
             Mail::to($input->email)->queue();
-        } elseif(auth()->check() && $create) { // There is an authencated user
+        } elseif (auth()->check() && $create) { // There is an authencated user
             // TODO: Implement notification.
         }
 
         return back();
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function calendar()
     {
-        return view();
+        $data['title'] = trans('lease.title-calendar');
+        return view('lease.calendar', $data);
+    }
+
+    /**
+     * @param int $leaseId      Thelease request id in the database.
+     * @param int  $statusId    The status id for the lease.
+     */
+    public function status($leaseId, $statusId)
+    {
+        // TODO: Register route.
+
+        switch ($statusId) {
+            case 1; // New request
+                break;
+            case 2: // Option
+                break;
+            case 3: // Confirmed.
+                break;
+            default:
+        }
     }
 
     /**
@@ -86,6 +111,7 @@ class LeaseController extends Controller
      */
     public function domainAccess()
     {
-        return view('lease.access');
+        $data['title'] = trans('lease.title-access');
+        return view('lease.access', $data);
     }
 }

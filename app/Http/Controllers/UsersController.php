@@ -51,8 +51,10 @@ class UsersController extends Controller
     }
 
     /**
-     * @param  BanValidtor $input
-     * @param  $userId
+     * Block a user in the system.
+     *
+     * @param  BanValidator $input  The user given input.
+     * @param  int          $userId The user id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function block(BanValidator $input, $userId)
@@ -76,7 +78,9 @@ class UsersController extends Controller
     }
 
     /**
-     * @param $userId
+     * Unblock a user in the system.
+     *
+     * @param  int $userId The user id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function unblock($userId)

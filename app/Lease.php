@@ -51,4 +51,14 @@ class Lease extends Model
         // Carbon::createFromFormat('H:i', $date)->format('H:i');
         return $this->attributes['end_date'] = strtotime(str_replace('/', '-', $date));
     }
+
+    /**
+     * Get all the request changes for the lease.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function changeHistory()
+    {
+        return $this->belongsToMany(LeaseChanges::class)->withTimestamps();
+    }
 }

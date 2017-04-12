@@ -21,5 +21,6 @@ Route::get('/home', 'HomeController@backend');
 // Lease routes
 Route::get('/lease', 'LeaseController@index')->name('lease.index');
 Route::get('/lease/request', 'LeaseController@leaseRequest')->name('lease.request');
+Route::post('/lease/store', 'LeaseController@leaseStore')->name('lease.store');
 Route::get('/lease/access', 'LeaseController@domainAccess')->name('lease.access');
 Route::get('/lease/calendar', 'LeaseController@Calendar')->name('lease.calendar');
