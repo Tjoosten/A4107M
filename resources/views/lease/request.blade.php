@@ -29,7 +29,7 @@
                                 </span>
                             </p>
 
-                            <form style="margin-top: 25px;" method="POST" action="" class="form-horizontal">
+                            <form style="margin-top: 25px;" method="POST" action="{{ route('lease.store') }}" class="form-horizontal">
                                 {{ csrf_field() }} {{-- CSRF TOKEN --}}
 
                                 <div class="form-group">

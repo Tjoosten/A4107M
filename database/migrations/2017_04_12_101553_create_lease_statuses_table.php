@@ -5,9 +5,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 /**
- * Class AddBannedAtColumnToUsersTable
+ * Class CreateLeaseStatusesTable
  */
-class AddBannedAtColumnToUsersTable extends Migration
+class CreateLeaseStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,8 +16,11 @@ class AddBannedAtColumnToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->timestamp('banned_at')->nullable();
+        Schema::create('lease_statuses', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->timestamps();
         });
     }
 
@@ -28,8 +31,6 @@ class AddBannedAtColumnToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('banned_at');
-        });
+        Schema::dropIfExists('lease_statuses');
     }
 }

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sijot\Http\Controllers;
 
-use App\Http\Requests\PasswordValidator;
-use App\Http\Requests\SettingsValidator;
-use App\Traits\FlashMessage;
-use App\User;
+use Sijot\Http\Requests\PasswordValidator;
+use Sijot\Http\Requests\SettingsValidator;
+use Sijot\Traits\FlashMessage;
+use Sijot\User;
 use Illuminate\Http\Request;
 
 /**
  * Class AccountController
- * @package App\Http\Controllers
+ * @package Sijot\Http\Controllers
  */
 class AccountController extends Controller
 {

@@ -1,17 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sijot\Http\Controllers;
 
-use App\Groups;
-use App\Http\Requests\GroupValidator;
+use Sijot\Groups;
+use Sijot\Http\Requests\GroupValidator;
+use Sijot\Traits\FlashMessage;
 use Illuminate\Http\Request;
 
 /**
  * Class GroupController
- * @package App\Http\Controllers
+ * @package Sijot\Http\Controllers
  */
 class GroupController extends Controller
 {
+    use FlashMessage;
+
     /**
      * @var Groups
      */
@@ -84,8 +87,7 @@ class GroupController extends Controller
         $group = $this->group->find($groupId);
 
         if ($group->update($input->except(['_token']))) {
-            session()->flash('class', 'alert alert-success');
-            session()->flash('message', trans('groups.update', ['name' => $group->title]));
+            $this->flashMessage(trans('groups.update', ['name' => $group->title]), 'success');
         }
 
         return back();

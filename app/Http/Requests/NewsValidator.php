@@ -4,7 +4,7 @@ namespace Sijot\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SettingsValidator extends FormRequest
+class NewsValidator extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

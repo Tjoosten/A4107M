@@ -1,32 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sijot\Http\Controllers;
 
-use App\Groups;
+use Sijot\Groups;
 use Illuminate\Http\Request;
 
 /**
  * Class HomeController
  *
- * @package App\Http\Controllers
+ * @package Sijot\Http\Controllers
  */
 class HomeController extends Controller
 {
     /**
-     * Groups database model.
-     *
-     * @var Groups
-     */
-    private $groups;
-
-    /**
      * Create a new controller instance.
-     *
-     * @param Groups $groups
      */
-    public function __construct(Groups $groups)
+    public function __construct()
     {
-        $this->groups = $groups;
+       $this->middleware('lang');
+       $this->middleware('forbid-banned-user')->only(['backend']);
     }
 
     /**
@@ -36,7 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['title'] = trans('home.title-front');
+        return view('home', $data);
     }
 
     /**
@@ -46,6 +39,7 @@ class HomeController extends Controller
      */
     public function backend()
     {
-        return view();
+        $data['title'] = trans('home.title-backend');
+        return view('', $data);
     }
 }

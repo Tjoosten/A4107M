@@ -5,16 +5,16 @@ namespace Sijot;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class LeaseChanges
+ * Class Categories
  *
- * @package App
+ * @package Sijot
  */
-class LeaseChanges extends Model
+class Categories extends Model
 {
     /**
      * Mass-assign fields for the database.
      *
-     * @return array
+     * @var array
      */
-    protected $fillable = ['author_id', 'change'];
+    protected $fillable = ['name', 'description'];
 }

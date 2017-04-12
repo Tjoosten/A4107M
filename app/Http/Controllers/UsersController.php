@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sijot\Http\Controllers;
 
-use App\Http\Requests\BanValidator;
-use App\Traits\FlashMessage;
-use App\User;
+use Sijot\Http\Requests\BanValidator;
+use Sijot\Traits\FlashMessage;
+use Sijot\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 /**
  * Class UsersController
  *
- * @package App\Http\Controllers
+ * @package Sijot\Http\Controllers
  */
 class UsersController extends Controller
 {
@@ -114,8 +114,12 @@ class UsersController extends Controller
         try {
             $user = $this->users->findOrFail($userId);
 
-            if ($user->delete()) { // The user has been deleted.
-                $this->flashMessage(trans('users.delete', ['name' => $user->name]), 'danger');
+            if ((string) $user->name === 'systeem') { // The user is system so can't be deleted.
+                $this->flashMessage(trans('users.user-no-delete'), 'danger');
+            } else {
+                if ($user->delete()) { // The user has been deleted.
+                    $this->flashMessage(trans('users.delete', ['name' => $user->name]), 'danger');
+                }
             }
 
         } catch (ModelNotFoundException $exceptiopn) {

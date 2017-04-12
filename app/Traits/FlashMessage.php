@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Traits;
+namespace Sijot\Traits;
 
 /**
  * Class FlashMessage
- * @package App\Traits
+ * @package Sijot\Traits
  */
 trait FlashMessage
 {

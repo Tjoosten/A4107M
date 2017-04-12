@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Sijot\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Request;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 
 /**
  * Class LanguageMiddleware
- * @package App\Http\Middleware
+ * @package Sijot\Http\Middleware
  */
 class LanguageMiddleware
 {
