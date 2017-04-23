@@ -109,7 +109,9 @@ class LeaseController extends Controller
      */
     public function calendar()
     {
-        $data['title'] = trans('lease.title-calendar');
+        $data['title']  = trans('lease.title-calendar');
+        $data['leases'] = $this->lease->where('status_id', $this->status->where('name', trans('lease.status-confirmed'))->get())->get();
+
         return view('lease.calendar', $data);
     }
 
@@ -132,7 +134,7 @@ class LeaseController extends Controller
                 $db['status'] = $this->status->where('name', trans('lease.status-option'))->first()->get();
                 break;
             case 3: // Confirmed.
-                $db['status'] = $this->status->find('name', trans('lease.status-confirmed'))->first()->get();
+                $db['status'] = $this->status->where('name', trans('lease.status-confirmed'))->first()->get();
                 break;
             default:
                 $this->flashMessage(trans('lease.status-error'), 'danger');

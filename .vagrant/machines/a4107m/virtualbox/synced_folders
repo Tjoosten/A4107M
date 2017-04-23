@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/Code/a4107m":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/Code/a4107m","hostpath":"C:/Users/Gebruiker/Desktop/A4107M","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Gebruiker/Desktop/A4107M","disabled":false,"__vagrantfile":true}}}
